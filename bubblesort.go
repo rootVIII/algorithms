@@ -8,8 +8,8 @@ func swap(first *int, second *int) {
 	*second = temp
 }
 
-// Bubblesort1 sorts integers via pointer swap.
-func Bubblesort1(incoming []int) []int {
+// BubbleSort1 sorts integers via pointer swap.
+func BubbleSort1(incoming []int) []int {
 	for i := 0; i < len(incoming)-1; i++ {
 		for j := 0; j < len(incoming)-i-1; j++ {
 			if incoming[j] > incoming[j+1] {
@@ -25,8 +25,8 @@ type Bsort struct {
 	incoming []int
 }
 
-// Bubblesort2 sorts integers via pointer in method signature.
-func (b *Bsort) Bubblesort2() {
+// BubbleSort2 sorts integers via pointer in method signature.
+func (b *Bsort) BubbleSort2() {
 	for i := 0; i < len(b.incoming)-1; i++ {
 		for j := 0; j < len(b.incoming)-i-1; j++ {
 			if b.incoming[j] > b.incoming[j+1] {
