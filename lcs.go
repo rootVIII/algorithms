@@ -54,7 +54,7 @@ func (l Lcs) GetAll() [][]uint8 {
 	return l.foundSequences
 }
 
-// SortSequence sorts a valid uint8 slice: values 0 through 255.
+// SortSequence sorts a valid uint8 slice.
 func (l *Lcs) SortSequence(unsorted []uint8) {
 	l.sortedList = MergeSort(unsorted)
 	for i := 0; i < len(l.sortedList); i++ {
