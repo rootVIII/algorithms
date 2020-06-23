@@ -21,15 +21,13 @@ func main() {
 
 	// MergeSort
 	fmt.Println("MergeSort")
-	unsorted := []uint8{8, 6, 3, 0, 4, 5, 3, 9, 2}
-	fmt.Printf("%v\n", MergeSort(unsorted))
+	fmt.Printf("%v\n", MergeSort([]uint8{8, 6, 3, 0, 4, 5, 3, 9, 2}))
 	fmt.Println()
 
 	// LCS
 	fmt.Println("Longest Common Subsequence")
-	unsorted = []uint8{8, 4, 9, 7, 8, 9, 3, 0, 4, 1}
 	var lcs = Lcs{}
-	lcs.SortSequence(unsorted)
+	lcs.SortSequence([]uint8{8, 4, 9, 7, 8, 9, 3, 0, 4, 1})
 	fmt.Printf("Shortest: %v\n", lcs.GetShortest())
 	fmt.Printf("Longest: %v\n", lcs.GetLongest())
 	fmt.Printf("All: %v\n", lcs.GetAll())
@@ -39,5 +37,12 @@ func main() {
 	fmt.Println("InsertionSort")
 	unsortedInts := []int{8, 96, 34, 9, 18, 0, 8, 9, 51, 3, 21, 1}
 	fmt.Printf("%v\n", InsertionSort(unsortedInts))
+	fmt.Println()
+
+	// InterpolationSearch
+	fmt.Println("InterpolationSearch")
+	bsort = Bsort{incoming: []int{4, 3, 5, 0, 8, 18, 14}}
+	bsort.BubbleSort2()
+	fmt.Printf("%d\n", InterpolationSearch(bsort.incoming, 8))
 	fmt.Println()
 }
