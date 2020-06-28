@@ -45,4 +45,12 @@ func main() {
 	bsort.BubbleSort2()
 	fmt.Printf("%d\n", InterpolationSearch(bsort.incoming, 8))
 	fmt.Println()
+
+	// PermutationSort (really awful)
+	fmt.Println("PermutationSort")
+	var sorter = &Arrsort{incoming: []int{8, 1, 3, 4, 5, 2}}
+	sorter.PermutationSort()
+	fmt.Printf("%v\n", sorter.GetSorted())
+	fmt.Println()
+
 }
