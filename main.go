@@ -53,4 +53,8 @@ func main() {
 	fmt.Printf("%v\n", sorter.GetSorted())
 	fmt.Println()
 
+	// recursively list all files in a directory (and all subdirectories)
+	fmt.Printf("Recursive folder list without 'walk'")
+	var dirPaths []string
+	listDirContents("/home", dirPaths)
 }
