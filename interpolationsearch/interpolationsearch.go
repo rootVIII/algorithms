@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/rootVIII/algorithms/bubblesort"
+)
 
 // InterpolationSearch finds an integer.
 func InterpolationSearch(sorted []int, target int) int {
@@ -45,10 +49,10 @@ func (b *Bsort) BubbleSort2() {
 func main() {
 	// InterpolationSearch
 	fmt.Println("InterpolationSearch")
-	bsort := Bsort{incoming: []int{4, 3, 5, 0, 8, 18, 14}}
+	bsort := bubblesort.Bsort{Incoming: []int{4, 3, 5, 0, 8, 18, 14}}
 	bsort.BubbleSort2()
 	// find position of number:
-	fmt.Printf("%d\n", InterpolationSearch(bsort.incoming, 8))
+	fmt.Printf("%d\n", InterpolationSearch(bsort.Incoming, 8))
 	fmt.Println()
 
 }
