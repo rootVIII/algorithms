@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package bubblesort
 
 // bubblesort
 
@@ -24,37 +22,18 @@ func BubbleSort1(incoming []int) []int {
 
 // Bsort represents a slice of ints.
 type Bsort struct {
-	incoming []int
+	Incoming []int
 }
 
 // BubbleSort2 sorts integers via pointer in method signature.
 func (b *Bsort) BubbleSort2() {
-	for i := 0; i < len(b.incoming)-1; i++ {
-		for j := 0; j < len(b.incoming)-i-1; j++ {
-			if b.incoming[j] > b.incoming[j+1] {
-				temp := b.incoming[j]
-				b.incoming[j] = b.incoming[j+1]
-				b.incoming[j+1] = temp
+	for i := 0; i < len(b.Incoming)-1; i++ {
+		for j := 0; j < len(b.Incoming)-i-1; j++ {
+			if b.Incoming[j] > b.Incoming[j+1] {
+				temp := b.Incoming[j]
+				b.Incoming[j] = b.Incoming[j+1]
+				b.Incoming[j+1] = temp
 			}
 		}
 	}
-}
-
-func main() {
-	//Bubblesort1
-	fmt.Println("BubbleSort1")
-	for _, n := range BubbleSort1([]int{4, 3, 5, 8, 5, 0, 8, 18, 14}) {
-		fmt.Printf("%d\n", n)
-	}
-	fmt.Println()
-
-	// Bubblesort2
-	fmt.Println("BubbleSort2")
-	var bsort = Bsort{incoming: []int{4, 3, 5, 8, 5, 0, 8, 18, 14}}
-	bsort.BubbleSort2()
-	for _, n := range bsort.incoming {
-		fmt.Printf("%d\n", n)
-	}
-	fmt.Println()
-
 }
