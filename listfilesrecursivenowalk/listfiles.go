@@ -39,3 +39,10 @@ func listDirContents(path string, dirs []string) {
 		}
 	}
 }
+
+func main() {
+	// recursively list all files in a directory (and all subdirectories)
+	fmt.Printf("Recursive folder list without 'walk'")
+	var dirPaths []string
+	listDirContents("/home", dirPaths)
+}

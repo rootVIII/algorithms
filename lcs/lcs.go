@@ -1,5 +1,9 @@
 package main
 
+import (
+	"fmt"
+)
+
 /*
 	rootVIII
 	Longest and shortest common subsequences of 8-bit integers
@@ -54,6 +58,32 @@ func (l Lcs) GetAll() [][]uint8 {
 	return l.foundSequences
 }
 
+func merge(left []uint8, right []uint8) []uint8 {
+	var combined []uint8
+	leftIndex, rightIndex := 0, 0
+	for leftIndex < len(left) && rightIndex < len(right) {
+		if left[leftIndex] < right[rightIndex] {
+			combined = append(combined, left[leftIndex])
+			leftIndex++
+		} else {
+			combined = append(combined, right[rightIndex])
+			rightIndex++
+		}
+	}
+	temp := append(left[leftIndex:], right[rightIndex:]...)
+	combined = append(combined, temp...)
+	return combined
+}
+
+// MergeSort sorts a slice of 8-bit unsigned integers.
+func MergeSort(current []uint8) []uint8 {
+	if len(current) < 2 {
+		return current
+	}
+	m := int(len(current) / 2)
+	return merge(MergeSort(current[0:m]), MergeSort(current[m:]))
+}
+
 // SortSequence sorts a valid uint8 slice.
 func (l *Lcs) SortSequence(unsorted []uint8) {
 	l.sortedList = MergeSort(unsorted)
@@ -75,4 +105,17 @@ func (l *Lcs) SortSequence(unsorted []uint8) {
 	if len(l.current) > 0 {
 		l.foundSequences = append(l.foundSequences, l.current)
 	}
+}
+
+func main() {
+
+	// LCS
+	fmt.Println("Longest Common Subsequence")
+	var lcs = Lcs{}
+	lcs.SortSequence([]uint8{8, 4, 9, 7, 8, 9, 3, 0, 4, 1})
+	fmt.Printf("Shortest: %v\n", lcs.GetShortest())
+	fmt.Printf("Longest: %v\n", lcs.GetLongest())
+	fmt.Printf("All: %v\n", lcs.GetAll())
+	fmt.Println()
+
 }

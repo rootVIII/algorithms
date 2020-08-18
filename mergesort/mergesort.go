@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 	rootVIII  |  30JAN2020
 	merge sort 8-bit integers
@@ -29,4 +31,13 @@ func MergeSort(current []uint8) []uint8 {
 	}
 	m := int(len(current) / 2)
 	return merge(MergeSort(current[0:m]), MergeSort(current[m:]))
+}
+
+func main() {
+
+	// MergeSort
+	fmt.Println("MergeSort")
+	fmt.Printf("%v\n", MergeSort([]uint8{8, 6, 3, 0, 4, 5, 3, 9, 2}))
+	fmt.Println()
+
 }

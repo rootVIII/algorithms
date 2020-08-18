@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // InsertionSort sorts via insertion sort algorithm.
 func InsertionSort(arr []int) []int {
 	var i int
@@ -16,4 +18,14 @@ func InsertionSort(arr []int) []int {
 		arr[j+1] = tmp
 	}
 	return arr
+}
+
+func main() {
+
+	// InsertionSort
+	fmt.Println("InsertionSort")
+	unsortedInts := []int{8, 96, 34, 9, 18, 0, 8, 9, 51, 3, 21, 1}
+	fmt.Printf("%v\n", InsertionSort(unsortedInts))
+	fmt.Println()
+
 }

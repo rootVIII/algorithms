@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"time"
 )
@@ -41,4 +42,14 @@ func (a *Arrsort) shuffle() {
 // GetSorted returns the sorted slice.
 func (a Arrsort) GetSorted() []int {
 	return a.incoming
+}
+
+func main() {
+
+	// PermutationSort (really awful)
+	fmt.Println("PermutationSort")
+	var sorter = &Arrsort{incoming: []int{8, 1, 3, 4, 5, 2}}
+	sorter.PermutationSort()
+	fmt.Printf("%v\n", sorter.GetSorted())
+	fmt.Println()
 }
