@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/rootVIII/algorithms/mergesort"
 )
 
 /*
@@ -58,35 +60,9 @@ func (l Lcs) GetAll() [][]uint8 {
 	return l.foundSequences
 }
 
-func merge(left []uint8, right []uint8) []uint8 {
-	var combined []uint8
-	leftIndex, rightIndex := 0, 0
-	for leftIndex < len(left) && rightIndex < len(right) {
-		if left[leftIndex] < right[rightIndex] {
-			combined = append(combined, left[leftIndex])
-			leftIndex++
-		} else {
-			combined = append(combined, right[rightIndex])
-			rightIndex++
-		}
-	}
-	temp := append(left[leftIndex:], right[rightIndex:]...)
-	combined = append(combined, temp...)
-	return combined
-}
-
-// MergeSort sorts a slice of 8-bit unsigned integers.
-func MergeSort(current []uint8) []uint8 {
-	if len(current) < 2 {
-		return current
-	}
-	m := int(len(current) / 2)
-	return merge(MergeSort(current[0:m]), MergeSort(current[m:]))
-}
-
 // SortSequence sorts a valid uint8 slice.
 func (l *Lcs) SortSequence(unsorted []uint8) {
-	l.sortedList = MergeSort(unsorted)
+	l.sortedList = mergesort.MergeSort(unsorted)
 	for i := 0; i < len(l.sortedList); i++ {
 		if i == len(l.sortedList)-1 {
 			if l.sortedList[i-1] == l.sortedList[i-1]+1 || l.sortedList[i-1] == l.sortedList[i] {
