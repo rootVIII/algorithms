@@ -28,24 +28,6 @@ func InterpolationSearch(sorted []int, target int) int {
 	return -1
 }
 
-// Bsort represents a slice of ints.
-type Bsort struct {
-	incoming []int
-}
-
-// BubbleSort2 sorts integers via pointer in method signature.
-func (b *Bsort) BubbleSort2() {
-	for i := 0; i < len(b.incoming)-1; i++ {
-		for j := 0; j < len(b.incoming)-i-1; j++ {
-			if b.incoming[j] > b.incoming[j+1] {
-				temp := b.incoming[j]
-				b.incoming[j] = b.incoming[j+1]
-				b.incoming[j+1] = temp
-			}
-		}
-	}
-}
-
 func main() {
 	// InterpolationSearch
 	fmt.Println("InterpolationSearch")
