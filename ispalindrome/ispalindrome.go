@@ -24,7 +24,7 @@ func main() {
 		"Was it a car or a cat I saw",
 		"testing",
 		"sit on a pan otis",
-		"dude where's my car",
+		"golang",
 		"murder for a jar of red rum",
 		"was it a rat I saw",
 	}
