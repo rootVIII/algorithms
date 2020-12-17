@@ -6,6 +6,7 @@ import (
 )
 
 // rootVIII LCP in a single pass
+// Leetcode 0 ms, faster than 100.00% of Go online submissions
 
 func longestCommonPrefix(strs []string) string {
 	if len(strs) < 1 {
@@ -19,16 +20,11 @@ func longestCommonPrefix(strs []string) string {
 	var lcp string = strs[0]
 
 	for _, val := range strs[1:] {
-		lastAllowedMatch := false
 		for pos, letter := range lcp {
 			if pos >= len(val) || letter != rune(val[pos]) {
-				lastAllowedMatch = true
-				continue
+				break
 			}
-
-			if !lastAllowedMatch {
-				strbuf.WriteRune(letter)
-			}
+			strbuf.WriteRune(letter)
 		}
 
 		if strbuf.Len() > 0 {
