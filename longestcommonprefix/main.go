@@ -7,9 +7,6 @@ import (
 
 // rootVIII
 // LCP in a single pass
-// LEETCODE:
-// Runtime: 0 ms, faster than 100.00% of Go online submissions for Longest Common Prefix.
-// Memory Usage: 2.6 MB, less than 12.36% of Go online submissions for Longest Common Prefix.
 
 func longestCommonPrefix(strs []string) string {
 	if len(strs) < 1 {
