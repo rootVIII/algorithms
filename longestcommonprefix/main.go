@@ -5,8 +5,7 @@ import (
 	"fmt"
 )
 
-// rootVIII
-// LCP in a single pass
+// rootVIII LCP in a single pass
 
 func longestCommonPrefix(strs []string) string {
 	if len(strs) < 1 {
