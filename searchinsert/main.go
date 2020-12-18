@@ -4,8 +4,6 @@ import (
 	"fmt"
 )
 
-// rootVIII searchInsert (leetcode)
-
 func searchInsert(nums []int, target int) int {
 	for i := 0; i < len(nums); i++ {
 		if nums[i] >= target {
@@ -13,7 +11,6 @@ func searchInsert(nums []int, target int) int {
 		}
 	}
 	return len(nums)
-
 }
 
 func main() {
