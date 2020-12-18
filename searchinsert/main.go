@@ -5,27 +5,14 @@ import (
 )
 
 // rootVIII searchInsert (leetcode)
-// 0 ms, faster than 100.00% of Go online submissions
 
 func searchInsert(nums []int, target int) int {
-	if (len(nums) == 1 && target == nums[0]) || target <= nums[0] {
-		return 0
-	}
-
-	if target > nums[len(nums)-1] {
-		return len(nums)
-	}
-
-	var i int = 0
-	for ; ; i++ {
-
-		if nums[i] < target && nums[i+1] >= target {
-			i++
-			break
+	for i := 0; i < len(nums); i++ {
+		if nums[i] >= target {
+			return i
 		}
 	}
-
-	return i
+	return len(nums)
 
 }
 
