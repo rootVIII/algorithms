@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// rootVIII 0 ms, faster than 100.00% of Go online submissions
+
 func lengthOfLastWord(s string) int {
 	var wordlen int = 0
 	var collecting bool = false
