@@ -19,9 +19,9 @@ func plusOne(digits []int) []int {
 				carry = true
 			}
 		}
-		if carry && i < 1 {
-			digits = append([]int{1}, digits...)
-		}
+	}
+	if carry {
+		digits = append([]int{1}, digits...)
 	}
 	return digits
 }
