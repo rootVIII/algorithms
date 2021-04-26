@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func consecutiveIndexes(items []string, target string) []int {
+func consecutiveIndexes(items []string) []int {
 
 	var matchesIndex []int
 	var match string
@@ -11,7 +11,7 @@ func consecutiveIndexes(items []string, target string) []int {
 	for i := 0; i < len(items); i++ {
 
 		if items[i] != match {
-			if len(likeMatches) > 1 && likeMatches[0] == target {
+			if len(likeMatches) > 1 {
 				for j := i - len(likeMatches); j < i; j++ {
 					matchesIndex = append(matchesIndex, j)
 				}
@@ -36,18 +36,6 @@ func main() {
 		"purple", "purple", "purple", "purple", "red",
 	}
 
-	// [11 12 13 14]
-	fmt.Printf("%v\n", consecutiveIndexes(ex1, "purple"))
-
-	// [0 1 2 3]
-	fmt.Printf("%v\n", consecutiveIndexes(ex1, "red"))
-
-	// []
-	fmt.Printf("%v\n", consecutiveIndexes(ex1, "yellow"))
-
-	// [5 6 8 9]
-	fmt.Printf("%v\n", consecutiveIndexes(ex1, "blue"))
-
-	// []
-	fmt.Printf("%v\n", consecutiveIndexes(ex1, "chrome"))
+	// 0 1 2 3 5 6 8 9 11 12 13 14
+	fmt.Printf("%v\n", consecutiveIndexes(ex1))
 }
