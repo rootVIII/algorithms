@@ -4,18 +4,26 @@ import "fmt"
 
 // https://leetcode.com/problems/single-number/
 
-func singleNumber(nums []int) int {
-	set := make(map[int]int, len(nums))
-	for _, val := range nums {
-		set[val]++
-	}
+//func singleNumber(nums []int) int {
+//	set := make(map[int]int, len(nums))
+//	for _, val := range nums {
+//		set[val]++
+//	}
+//
+//	for key, val := range set {
+//		if val < 2 {
+//			return key
+//		}
+//	}
+//	return 0
+//}
 
-	for key, val := range set {
-		if val < 2 {
-			return key
-		}
+func singleNumber(nums []int) int {
+	var initial int = 0
+	for _, val := range nums {
+		initial ^= val
 	}
-	return 0
+	return initial
 }
 
 func main() {
